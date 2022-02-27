@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux';
-import issuesReducer from './issues/reducer';
+import okrReducer from './okr/reducer';
+import loaderReducer from './loader/reducer';
 
 const rootReducer = combineReducers({
-  issues: issuesReducer,
+  okr: okrReducer,
+  loader: loaderReducer,
 });
 
 export default rootReducer;

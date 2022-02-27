@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
   FlatList,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import {connect} from 'react-redux';
 import {actions as issueActions} from '../store/issues/actions';
@@ -34,14 +35,14 @@ const HomeScreen = (props) => {
 
   const renderIssueItem = ({item}) => {
     return (
-      <TouchableOpacity
+      <TouchableWithoutFeedback
         onPress={() => navigation.push('DetailsScreen', {id: item.number})}>
         <View key={item.title} style={styles.listItem}>
           <Text style={styles.title}>{item.title}</Text>
           <Text>{'#' + item.number}</Text>
           <Text>{getIssueDetail(item)}</Text>
         </View>
-      </TouchableOpacity>
+      </TouchableWithoutFeedback>
     );
   };
   return (
